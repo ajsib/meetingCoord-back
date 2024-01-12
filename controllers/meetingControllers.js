@@ -24,7 +24,7 @@ exports.createMeeting = async (req, res) => {
     // Create and save the new meeting
     const meeting = new Meeting({ coordinator, meetingName, description, proposedTimes, link: meetingLink });
     await meeting.save();
-    res.status(201).json({ message: "Meeting created", meeting });
+    res.status(201).json({ message: "Meeting created", link: meetingLink, meeting });
   } catch (error) {
     res.status(500).json({ message: "Error creating meeting", error: error });
   }
