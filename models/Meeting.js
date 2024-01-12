@@ -8,7 +8,7 @@ const meetingSchema = new mongoose.Schema({
   },
   meetingName: { type: String, required: true },
   description: String,
-  proposedTimes: [{
+  proposedTimes: [{ 
     start: { type: Date, required: true },
     end: { type: Date, required: true }
   }],
